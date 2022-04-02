@@ -11,7 +11,7 @@ import {
 import { useForm } from '@mantine/form';
 import Base from './Base';
 
-export default function Welcome({ nextStep }) {
+export default function Welcome({ nextStep, ...rest }) {
 	const form = useForm({
 		initialValues: {
 			fullName: '',
@@ -20,7 +20,7 @@ export default function Welcome({ nextStep }) {
 	});
 
 	return (
-		<Base>
+		<Base {...rest}>
 			<Title order={1}>Welcome! First things first...</Title>
 			<Text>You can always change them later</Text>
 			<Box

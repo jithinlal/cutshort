@@ -2,9 +2,9 @@ import { Button, Center, Text, ThemeIcon, Title } from '@mantine/core';
 import { Check } from 'tabler-icons-react';
 import Base from './Base';
 
-export default function Final({ nextStep }) {
+export default function Final({ submit, ...rest }) {
 	return (
-		<Base>
+		<Base {...rest}>
 			<Center>
 				<ThemeIcon radius='xl' size='xl'>
 					<Check />
@@ -12,7 +12,7 @@ export default function Final({ nextStep }) {
 			</Center>
 			<Title order={1}>Congratulations, Eren!</Title>
 			<Text>You have completed onboarding, you can start using the Eden!</Text>
-			<Button>Launch Eden</Button>
+			<Button onClick={submit}>Launch Eden</Button>
 		</Base>
 	);
 }

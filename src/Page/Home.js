@@ -57,6 +57,8 @@ export default function Home() {
 	const nextStep = () =>
 		setActive((current) => (current < 3 ? current + 1 : current));
 
+	const submit = () => {};
+
 	return (
 		<Container
 			sx={(theme) => ({
@@ -108,7 +110,7 @@ export default function Home() {
 						completedIcon={<Number4 />}
 						icon={<Number4 />}
 					>
-						<Final nextStep={nextStep} />
+						<Final submit={submit} />
 					</Stepper.Step>
 				</StyledStepper>
 			</Stack>

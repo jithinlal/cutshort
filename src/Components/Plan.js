@@ -11,11 +11,11 @@ import { User, Users } from 'tabler-icons-react';
 import { useState } from 'react';
 import Base from './Base';
 
-export default function Plan({ nextStep }) {
+export default function Plan({ nextStep, ...rest }) {
 	const [indexClicked, setIndexClicked] = useState(1);
 
 	return (
-		<Base>
+		<Base {...rest}>
 			<Title order={2}>How are you planning to use Eden?</Title>
 			<Text>We'll streamline your setup experience accordingly</Text>
 			<Box

@@ -11,7 +11,7 @@ import {
 import { useForm } from '@mantine/form';
 import Base from './Base';
 
-export default function Workspace({ nextStep }) {
+export default function Workspace({ nextStep, ...rest }) {
 	const form = useForm({
 		initialValues: {
 			fullName: '',
@@ -20,7 +20,7 @@ export default function Workspace({ nextStep }) {
 	});
 
 	return (
-		<Base>
+		<Base {...rest}>
 			<Title order={2}>Let's set up a home for all your work</Title>
 			<Text>You can always create another workspace later</Text>
 			<Box
