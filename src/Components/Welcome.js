@@ -11,7 +11,7 @@ import {
 import { useForm } from '@mantine/form';
 import Base from './Base';
 
-export default function Welcome({ nextStep, ...rest }) {
+export default function Welcome({ nextStep, setFullName, ...rest }) {
 	const form = useForm({
 		initialValues: {
 			fullName: '',
@@ -31,6 +31,7 @@ export default function Welcome({ nextStep, ...rest }) {
 				<form
 					onSubmit={form.onSubmit((values) => {
 						console.log(values);
+						setFullName(values.displayName);
 						nextStep();
 					})}
 				>

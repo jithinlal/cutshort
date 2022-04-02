@@ -54,6 +54,8 @@ function StyledStepper(props) {
 
 export default function Home() {
 	const [active, setActive] = useState(0);
+	const [fullName, setFullName] = useState('');
+
 	const nextStep = () =>
 		setActive((current) => (current < 3 ? current + 1 : current));
 
@@ -86,7 +88,7 @@ export default function Home() {
 						completedIcon={<Number1 />}
 						icon={<Number1 />}
 					>
-						<Welcome nextStep={nextStep} />
+						<Welcome nextStep={nextStep} setFullName={setFullName} />
 					</Stepper.Step>
 					<Stepper.Step
 						label='2'
@@ -110,7 +112,7 @@ export default function Home() {
 						completedIcon={<Number4 />}
 						icon={<Number4 />}
 					>
-						<Final submit={submit} />
+						<Final submit={submit} fullName={fullName} />
 					</Stepper.Step>
 				</StyledStepper>
 			</Stack>
